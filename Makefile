@@ -18,6 +18,8 @@ $(TWEAK_NAME)_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -DTWEAK_VERSION=$
 $(TWEAK_NAME)_FRAMEWORKS = UIKit Foundation AVFoundation AudioToolbox VideoToolbox
 $(TWEAK_NAME)_OBJ_FILES = $(shell find Source/Utils/lib -name '*.a')
 $(TWEAK_NAME)_LIBRARIES = bz2 c++ iconv z
+ADDITIONAL_CFLAGS += -Wno-error=vla-cxx-extension
+ADDITIONAL_CXXFLAGS += -Wno-error=vla-cxx-extension
 ifeq ($(SIDELOADING),1)
 $(TWEAK_NAME)_FILES += Sideloading.xm
 endif
